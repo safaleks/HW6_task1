@@ -65,8 +65,9 @@ public class StatsServices {
 
     public int lessAverageSales(long[] sales) {
         int i = 0; // Переменная подсчета количества месяцев
+        long avg = averagePrice(sales); // присваиваем переменной значение среднего
         for (long sale : sales) {
-            if (sale < averagePrice(sales)) {
+            if (sale < avg) {
                 i = i + 1; // Считаем месяцы в диапазоне продаж ниже среднего
             }
         }
@@ -75,8 +76,9 @@ public class StatsServices {
 
     public int moreAverageSales(long[] sales) {
         int i = 0; // Переменная подсчета количества месяцев
+        long avg = averagePrice(sales); // присваиваем переменной значение среднего
         for (long sale : sales) {
-            if (sale > averagePrice(sales)) {
+            if (sale > avg) {
                 i = i + 1; // Считаем месяцы в диапазоне продаж выше среднего
             }
         }
